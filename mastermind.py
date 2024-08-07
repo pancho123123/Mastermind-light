@@ -14,15 +14,13 @@ colores.append(number_b)
 colores.append(number_c)
 colores.append(number_d)
 
-colores2 = colores
-
 colores_escogidos = []
 colores_escogidos2 = []
 value = []
-number_times = 4
+game = True
 
 
-while colores != colores_escogidos:
+while game:
     while len(colores_escogidos) < 4:
         eleccion = input("Elige color: rojo(r), verde(v), azul(a), morado(m), yellow(y), celeste(c), fucsia(f) o brown(b)")
         if eleccion == "r":
@@ -62,6 +60,10 @@ while colores != colores_escogidos:
             if colores_escogidos[i] not in colores:
                 colores_escogidos[i] = "pass"
 
+    for i in range(4):
+        if value[i] == "red":
+            game = False
+
     for color in colores_escogidos:
         if color in colores:
             value.append("white")
@@ -74,7 +76,6 @@ while colores != colores_escogidos:
     colores.append(number_b)
     colores.append(number_c)
     colores.append(number_d)
-    #print(colores)
     colores_escogidos = []
     colores_escogidos2 = []
     value = []
